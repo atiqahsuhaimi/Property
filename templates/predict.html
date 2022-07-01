@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head></head>
+    <body>{% extends 'base.html' %} {% block body_block %}
+        {% load static %}
+
+       
+
+        <section class="section" id="predict">
+          <div class="section__title section__title--testimonials">
+            <h2 class="section__description" style="text-align: center; font-family:monospace; font-size: 35px;">Prediction</h2>
+        
+            <p style="font-size: 30px; text-align: center; color:black;"><b>
+                Enter the following values to predict the fake listing in property
+            </p></b>
+            <form action="{% url 'result' %}">
+                    
+              {% csrf_token %}
+
+              <style>
+                div {
+                  background-color: white;
+                  width: 400;
+                  border: 3px solid black;
+                  padding: 70px;
+                  margin: 10px;
+                }
+
+                </style>
+              
+              
+              <div class="features__img" style="font-size: 1.9rem;">
+              Price: <input type="number" required name="Price"> <br> <br>
+              <p style="color:black;">Tenure:</p>
+              <input type="radio" id="Tenure" name="Tenure" value="0">
+              <label for="0">Freehold</label><br>
+              <input type="radio" id="Tenure" name="Tenure" value="1">
+              <label for="1">Leasehold</label>
+              <br> <br>
+              <label for="Property_Type">Property Type:</label>
+              <select name="Property_Type" id="Property_Type">
+                <option value="0">Flat</option>
+                <option value="1">Studio</option>
+                <option value="2">Townhouse</option>
+                <option value="3">Apartment</option>
+                <option value="4">Serviced Residence</option>
+                <option value="5">Duplex</option>
+                <option value="6">Terrace</option>
+                <option value="7">Link</option>
+                <option value="8">Superlink</option>
+                <option value="9">Condominium</option>
+                <option value="10">Semi D</option>
+                <option value="11">Cluster</option>
+                <option value="12">Bungalow</option>
+                <option value="13">Villa</option>
+              </select>
+              <br> <br>
+              Built Up: <input type="number" required name="Built_Up"> <br> <br>
+              <p style="color:black;">Furnishing:</p>
+              <input type="radio" id="Furnishing" name="Furnishing" value="0">
+              <label for="0">Fully Furnished</label><br>
+              <input type="radio" id="Furnishing" name="Furnishing" value="1">
+              <label for="1">Semi Furnished</label><br>
+              <input type="radio" id="Furnishing" name="Furnishing" value="2">
+              <label for="2">Unfurnished</label>
+              <br> <br>
+              Bedroom: <input type="number" required name="Bedroom"> <br> <br>
+              Bathroom: <input type="number" required name="Bathroom"> <br> <br>
+              <label for="Area">Area:</label>
+              <select name="Area" id="Area">
+                <option value="0">Kelantan</option>
+                <option value="1">Kedah</option>
+                <option value="2">Perlis</option>
+                <option value="3">Pahang</option>
+                <option value="4">Terengganu</option>
+                <option value="5">Sarawak</option>
+                <option value="6">Sabah</option>
+                <option value="7">Melaka</option>
+                <option value="8">Perak</option>
+                <option value="9">Negeri Sembilan</option>
+                <option value="10">Penang</option>
+                <option value="11">Johor</option>
+                <option value="12">Putrajaya</option>
+                <option value="13">Selangor</option>
+                <option value="14">Kuala Lumpur</option>    
+              </select>
+              <br> <br>
+             
+
+              <input class="btn btn--submit button_slide2 slide_left2" type="submit" value="Predict" style="background-color: #3cb371; color: white;">
+              <br>
+            </div>
+                  
+          </div>
+        </form>
+
+        <style>
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          </style>
+          </head>
+          <body>
+            <br>
+            <br>
+          
+          <h2 style="font-size: 20px; text-align: center; color:black;">Summary Plot for Fake Listing in Property</h2>
+          <p></p>
+          
+          <img src="{% static 'fake/media/shapfake.png' %}" alt="fake" style="width:50%">
+        <br>
+        <br>
+        <h2 style="font-size: 20px; text-align: center; color:black;">Summary Plot for True Listing in Property</h2>
+        <p></p>
+        
+        <img src="{% static 'fake/media/shaptrue.png' %}" alt="true" style="width:50%">
+      
+      
+        
+        </section>
+
+            
+            
+                </body>
+                </html>
+                {% endblock %}

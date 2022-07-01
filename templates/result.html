@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head></head>
+    <body>{% extends 'base.html' %} {% block body_block %}
+        {% load static %}
+        
+        
+        <header class="header">
+          <section class="section" id="predict">
+            <div class="section__title section__title--testimonials">
+              <h2 class="section__description" style="text-align: center; font-family:monospace; font-size: 35px;">RESULT</h2>
+           
+    
+            
+                    <h3 style="font-size: 25px; text-align: center;">The data you have entered is : {{lis}}</h3>
+                  
+                 
+                    
+
+                    
+            
+                    <h3 style="font-size: 20px; text-align: center; color:blue;">The Category of Property is {{result2}}</h3>
+
+                
+                <div class="operations" style=" border-radius:25px; border: 3px solid black;">
+                  <div class="operations__tab-container">
+                    <button class="btn operations__tab operations__tab--1 operations__tab--active" style="background-color: green;" data-tab="1">
+                      <span>Result =</span>0
+                    </button>
+                    <button class="btn operations__tab operations__tab--2" style="background-color: red;" data-tab="2">
+                      <span>Result =</span>1
+                    </button>
+                  </div>
+              
+                  <div class="operations__content operations__content--1 operations__content--active">
+                   
+                
+                    <h5 class="operations__header">
+                    </h5>
+                    <p style="font-size: 20px; text-align: center; color:black;">
+                      If the result is equal to 0 then the data that you entered is classified as TRUE property. 
+                    </p>
+                  </div>
+              
+                  <div class="operations__content operations__content--2">
+                  
+                    <h5 class="operations__header"></h5>
+                    <p style="font-size: 20px; text-align: center; color:black;">
+                      If the result is equal to 1 then the data that you entered is classified as FAKE property.
+                    </p>
+                  </div>
+                </div>
+                  
+                  </div>
+                  <br>
+                    <br>
+                    <center>
+
+            
+             
+                
+
+
+
+                    <div class="img">
+                      <img src="{% static 'fake/media/pie.png' %}" style="width:70%" alt="" class="img-fluid">
+                    </div>
+                  </section>
+                  
+                  
+                </body>
+                </html>
+                {% endblock %}
